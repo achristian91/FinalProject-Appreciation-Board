@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
+const path = require('path');
 
 const PORT = process.env.PORT || 3001;
 var app = express();
@@ -18,6 +19,12 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-type,Authorization');
   next();
 });
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+})
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 /*====Node server setup so we can be able to parse the requests/responses coming in and out of the server ============*/
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -89,11 +96,11 @@ app.post('/log-in', (req, res) => {
       });
     })
 });
-
-app.get('/', jwtMW /* Using the express jwt MW here */, (req, res) => {
-  console.log("Web Token Checked.")
-  res.send('You are authenticated'); //Sending some response when authenticated
-});
+//
+// app.get('/', jwtMW /* Using the express jwt MW here */, (req, res) => {
+//   console.log("Web Token Checked.")
+//   res.send('You are authenticated'); //Sending some response when authenticated
+// });
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, function () {

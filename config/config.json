@@ -1,8 +1,8 @@
 {
     "development": {
-      "username": "tn152ldpg1uewjci",
-      "password": "jb79fvfut9iyne7t",
-      "database": "xnsh1rvjxhdn09jb",
+      "username": "root",
+      "password": "wilkinson",
+      "database": "authentication",
       "host": "127.0.0.1",
       "dialect": "mysql"
     },
