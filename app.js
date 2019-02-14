@@ -10,7 +10,7 @@ const exjwt = require('express-jwt');
 const PORT = process.env.PORT || 3001;
 var app = express();
 
-// Requiring our models for syncing
+// Requier  models for syncing
 var db = require("./models");
 
 /*========= Here we want to let the server know that we should expect and allow a header with the content-type of 'Authorization' ============*/
@@ -19,12 +19,12 @@ app.use((req, res, next) => {
   next();
 });
 
-/*========= This is the typical node server setup so we can be able to parse the requests/responses coming in and out of the server ============*/
+/*====Node server setup so we can be able to parse the requests/responses coming in and out of the server ============*/
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-/*========= Here we will set up an express jsonwebtoken middleware(simply required for express to properly utilize the token for requests) You MUST instantiate this with the same secret that will be sent to the client ============*/
+/*======Express jsonwebtoken middleware(simply required for express to properly utilize the token for requests) You MUST instantiate this with the same secret that will be sent to the client ============*/
 const jwtMW = exjwt({
   secret: 'super secret'
 });
@@ -43,7 +43,7 @@ app.post('/signup', (req, res) => {
   });
 })
 
-/* This is SUPER important! This is the route that the client will be passing the entered credentials for verification to. If the credentials match, then the server sends back a json response with a valid json web token for the client to use for identification. */
+/* Route that the client will be passing the entered credentials for verification to. If the credentials match, then the server sends back a json response with a valid json web token for the client to use for identification. */
 app.post('/log-in', (req, res) => {
   const { username, password } = req.body;
   console.log("User submitted: ", username, password);
