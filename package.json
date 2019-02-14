@@ -41,7 +41,7 @@
     "startboth": "concurrently \"nodemon app.js\" \"npm run client\"",
     "start": "node app.js",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
