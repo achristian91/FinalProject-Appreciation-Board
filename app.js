@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
-const path = require('path');
+// const path = require('path');
 
 const PORT = process.env.PORT || 3001;
 var app = express();

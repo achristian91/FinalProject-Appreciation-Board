@@ -39,7 +39,7 @@ class HomePage extends React.Component {
                 <h1 className={classes.title}>Appreciation Board</h1>
                 <h4>
                 Web Application that allows small businesses to provide a portal 
-                where fellow employees can post recognition to their fellow staff 
+                where employees can post recognition to their fellow staff 
                 for their outstanding merit. 
                 </h4>
               </GridItem>
