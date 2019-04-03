@@ -40,9 +40,8 @@
     "server": "node app.js",
     "client": "cd client && npm start",
     "startboth": "concurrently \"nodemon app.js\" \"npm run client\"",
-    "start": "node app.js",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm install && cd client && npm install --only-dev && npm install && npm run build"  },
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/achristian91/FinalProject-Appreciation-Board.git"
