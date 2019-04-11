@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import './App.css';
+import '../Portal/portal.css';
 
 // import withStyles from "@material-ui/core/styles/withStyles";
-import Button from "./assets/Material/CustomButtons/Button";
-import Header from "./assets/Material/Header/Header";
-import HeaderLinks from "./assets/Material/Header/HeaderLinks";
+import Button from "../../assets/Material/CustomButtons/Button";
+import Header from "../../assets/Material/Header/Header";
+import HeaderLinks from "../../assets/Material/Header/HeaderLinks";
 
 /* Once the 'Authservice' and 'withAuth' componenets are created, import them into App.js */
-import AuthHelperMethods from './components/AuthHelperMethods';
+import AuthHelperMethods from '../../components/AuthHelperMethods';
 
 //Our higher order component
-import withAuth from './components/withAuth';
+import withAuth from '../../components/withAuth';
 // import profilePageStyle from "./assets/jss/material-kit-react/views/UserPage";
 
 class App extends React.Component {
@@ -60,7 +60,7 @@ class App extends React.Component {
         <div className="App">
           <div className="main-page">
             <div className="top-section">
-              <h1>Welcome to Appreciation Board, {name}</h1>
+              <h1>Welcome to Appreciation Board {name}</h1>
             </div>
           </div>
         </div>

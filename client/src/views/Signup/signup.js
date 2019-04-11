@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import AuthHelperMethods from '../../AuthHelperMethods';
-import Header from "../../../assets/Material/Header/Header";
-import HeaderLinks from "../../../assets/Material/Header/HeaderLinks.jsx";
+import AuthHelperMethods from '../../components/AuthHelperMethods';
+import Header from "../../assets/Material/Header/Header";
+import HeaderLinks from "../../assets/Material/Header/HeaderLinks.jsx";
 
 import axios from "axios";
 import { Link } from 'react-router-dom';

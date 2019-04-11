@@ -8,13 +8,13 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
 
 // core components
-import Header from "../../../assets/Material/Header/Header";
-import GridContainer from "../../../assets/Material/Grid/GridContainer.jsx";
-import GridItem from "../../../assets/Material/Grid/GridItem.jsx";
-import HeaderLinks from "../../../assets/Material/Header/HeaderLinks.jsx";
-import Parallax from "../../../assets/Material/Parallax/Parallax.jsx";
+import Header from "../../assets/Material/Header/Header";
+import GridContainer from "../../assets/Material/Grid/GridContainer.jsx";
+import GridItem from "../../assets/Material/Grid/GridItem.jsx";
+import HeaderLinks from "../../assets/Material/Header/HeaderLinks.jsx";
+import Parallax from "../../assets/Material/Parallax/Parallax.jsx";
 
-import homePageStyle from "../../../assets/jss/material-kit-react/views/homePage";
+import homePageStyle from "../../assets/jss/material-kit-react/views/homePage";
 
 class HomePage extends React.Component {
   render() {
@@ -32,7 +32,7 @@ class HomePage extends React.Component {
           }}
           {...rest}
         />
-        <Parallax filter image={require("../../../assets/img/landing-bg.jpg")}>
+        <Parallax filter image={require("../../assets/img/landing-bg.jpg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>

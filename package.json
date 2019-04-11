@@ -2,7 +2,18 @@
   "name": "finalproject-appreciation-board",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "private": true,
+  "author": "Arthur Christian",
+  "engines": {
+    "node": "10.8.0"
+  },
+  "scripts": {
+    "server": "node server.js",
+    "client": "cd client && npm start",
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
+    "startboth": "concurrently \"nodemon app.js\" \"npm run client\"",
+    "start": "node server.js"
+  },
   "dependencies": {
     "@material-ui/core": "3.1.1",
     "@material-ui/icons": "3.0.1",
@@ -35,19 +46,10 @@
     "sequelize-cli": "^4.0.0",
     "uuid": "^3.2.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "server": "node app.js",
-    "client": "cd client && npm start",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "startboth": "concurrently \"nodemon app.js\" \"npm run client\"",
-    "start": "node app.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/achristian91/FinalProject-Appreciation-Board.git"
   },
-  "author": "Arthur Christian",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/achristian91/FinalProject-Appreciation-Board/issues"
