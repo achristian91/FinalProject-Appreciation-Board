@@ -1,17 +1,18 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
-var bcrypt = require('bcryptjs');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
 
 const PORT = process.env.PORT || 3001;
 var app = express();
 
-// Requier  models for syncing
+// Requiring our models for syncing
 var db = require("./models");
+
+app.use(express.static(path.join(__dirname, 'client/build')))
 
 /*========= Here we want to let the server know that we should expect and allow a header with the content-type of 'Authorization' ============*/
 app.use((req, res, next) => {
@@ -19,18 +20,12 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-})
-
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-/*====Node server setup so we can be able to parse the requests/responses coming in and out of the server ============*/
+/*========= This is the typical node server setup so we can be able to parse the requests/responses coming in and out of the server ============*/
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-/*======Express jsonwebtoken middleware(simply required for express to properly utilize the token for requests) You MUST instantiate this with the same secret that will be sent to the client ============*/
+/*========= Here we will set up an express jsonwebtoken middleware(simply required for express to properly utilize the token for requests) You MUST instantiate this with the same secret that will be sent to the client ============*/
 const jwtMW = exjwt({
   secret: 'super secret'
 });
@@ -49,7 +44,7 @@ app.post('/signup', (req, res) => {
   });
 })
 
-/* Route that the client will be passing the entered credentials for verification to. If the credentials match, then the server sends back a json response with a valid json web token for the client to use for identification. */
+/* This is SUPER important! This is the route that the client will be passing the entered credentials for verification to. If the credentials match, then the server sends back a json response with a valid json web token for the client to use for identification. */
 app.post('/log-in', (req, res) => {
   const { username, password } = req.body;
   console.log("User submitted: ", username, password);
@@ -62,7 +57,7 @@ app.post('/log-in', (req, res) => {
       console.log("User Found: ", user);
       if (user === null) {
         res.status(401).json({
-          sucess: false,
+          success: false,
           token: null,
           err: 'Invalid Credentials'
         });
@@ -77,9 +72,9 @@ app.post('/log-in', (req, res) => {
             },
             'super secret',
             { expiresIn: 129600 }); // Signing the token
-          
+
           res.json({
-            sucess: true,
+            success: true,
             err: null,
             token
           });
@@ -87,7 +82,7 @@ app.post('/log-in', (req, res) => {
         else {
           console.log("Entered Password and Hash do not match!");
           res.status(401).json({
-            sucess: false,
+            success: false,
             token: null,
             err: 'Entered Password and Hash do not match!'
           });
@@ -95,15 +90,15 @@ app.post('/log-in', (req, res) => {
       });
     })
 });
-//
-// app.get('/', jwtMW /* Using the express jwt MW here */, (req, res) => {
-//   console.log("Web Token Checked.")
-//   res.send('You are authenticated'); //Sending some response when authenticated
-// });
+
+app.get('/', jwtMW /* Using the express jwt MW here */, (req, res) => {
+  console.log("Web Token Checked.")
+  res.send('You are authenticated'); //Sending some response when authenticated
+});
 
 db.sequelize.sync().then(() => {
   app.listen(PORT, function () {
-    console.log("App listening on PORT " + PORT);
+    console.log(`==> 🌎  Listening on port ${PORT}. Visit http://localhost:${PORT}/ in your browser.`);
   });
 })
 
