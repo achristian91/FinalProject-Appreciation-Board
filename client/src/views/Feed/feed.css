@@ -1,0 +1,12 @@
+.container-fluid {
+  background-image: url("../../assets/img/bg2.jpg");
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 170px;
+}
+
+#logoutbutton {
+  float: right;
+}
+
