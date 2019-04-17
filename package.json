@@ -10,7 +10,7 @@
   "scripts": {
     "server": "node server.js",
     "client": "cd client && npm start",
-    "startboth": "concurrently \"nodemon app.js\" \"npm run client\"",
+    "startboth": "concurrently \"nodemon server.js\" \"npm run client\"",
     "start": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
