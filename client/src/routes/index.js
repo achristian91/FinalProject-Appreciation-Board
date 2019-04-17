@@ -1,6 +1,6 @@
 import Portal from '../views/Portal/portal';
-import Home from '../views/Home/home.js';
-import Feed from '../views/Feed/feed.js';
+import Home from '../views/Home/home';
+import Feed from '../views/Feed/feed';
 import Login from '../views/Login/login';
 import Signup from '../views/Signup/signup';
 
