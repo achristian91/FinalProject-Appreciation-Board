@@ -4,12 +4,15 @@
   "description": "",
   "private": true,
   "author": "Arthur Christian",
+  "engines": {
+    "node": "10.8.0"
+  },
   "scripts": {
     "server": "node server.js",
-    "build": "react-scripts build",
     "client": "cd client && npm start",
     "startboth": "concurrently \"nodemon app.js\" \"npm run client\"",
-    "start": "node server.js"
+    "start": "node server.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "dependencies": {
     "@material-ui/core": "3.1.1",
