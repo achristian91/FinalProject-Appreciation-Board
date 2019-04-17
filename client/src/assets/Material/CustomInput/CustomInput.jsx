@@ -11,7 +11,7 @@ import Input from "@material-ui/core/Input";
 
 import customInputStyle from "../../jss/material-kit-react/components/customInputStyle";
 
-function CustomInput({ ...props }) {
+function input({ ...props }) {
   const {
     classes,
     formControlProps,
@@ -76,7 +76,7 @@ function CustomInput({ ...props }) {
   );
 }
 
-CustomInput.propTypes = {
+input.propTypes = {
   classes: PropTypes.object.isRequired,
   labelText: PropTypes.node,
   labelProps: PropTypes.object,
@@ -89,4 +89,4 @@ CustomInput.propTypes = {
   white: PropTypes.bool
 };
 
-export default withStyles(customInputStyle)(CustomInput);
+export default withStyles(customInputStyle)(input);

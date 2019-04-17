@@ -31,7 +31,7 @@ function HeaderLinks({ ...props }) {
       </ListItem>
       <ListItem className={classes.listItem}>
         <Button
-          component={Link} to="Portal"
+          component={Link} to="portal"
           color="transparent"
         >
           Portal

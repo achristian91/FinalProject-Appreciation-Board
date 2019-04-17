@@ -124,12 +124,12 @@ const infoCardHeader = {
 };
 const primaryCardHeader = {
   color: "#fff",
-  background: "linear-gradient(60deg, #ab47bc, #8e24aa)",
+  background: "linear-gradient(60deg, #989898, #A8A8A8)",
   ...primaryBoxShadow
 };
 const roseCardHeader = {
   color: "#fff",
-  background: "linear-gradient(60deg, #ec407a, #d81b60)",
+  background: "linear-gradient(60deg, #B8B8B8, #B8B8B8)",
   ...roseBoxShadow
 };
 const cardActions = {
