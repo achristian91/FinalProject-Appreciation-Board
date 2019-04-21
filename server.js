@@ -6,11 +6,15 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
 
+let stream = require('getstream');
+
 const PORT = process.env.PORT || 3001;
 var app = express();
 
 // Requiring our models for syncing
 var db = require("./models");
+
+let client = stream.connect('REACT_APP_API_KEY', 'REACT_APP_TOKEN');
 
 app.use(express.static(path.join(__dirname, 'client/build')))
 
@@ -25,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-/*========= Here we will set up an express jsonwebtoken middleware(simply required for express to properly utilize the token for requests) You MUST instantiate this with the same secret that will be sent to the client ============*/
+/*========= Express jsonwebtoken middleware(simply required for express to properly utilize the token for requests) You MUST instantiate this with the same secret that will be sent to the client ============*/
 const jwtMW = exjwt({
   secret: 'super secret'
 });
@@ -44,7 +48,7 @@ app.post('/signup', (req, res) => {
   });
 })
 
-/* This is SUPER important! This is the route that the client will be passing the entered credentials for verification to. If the credentials match, then the server sends back a json response with a valid json web token for the client to use for identification. */
+/* Route that the client will be passing the entered credentials for verification to. If the credentials match, then the server sends back a json response with a valid json web token for the client to use for identification. */
 app.post('/log-in', (req, res) => {
   const { username, password } = req.body;
   console.log("User submitted: ", username, password);
