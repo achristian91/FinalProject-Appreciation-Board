@@ -18,6 +18,7 @@ import Card from "../../assets/Material/Card/Card.jsx";
 import CardBody from "../../assets/Material/Card/CardBody.jsx";
 import CardHeader from "../../assets/Material/Card/CardHeader.jsx";
 import CardFooter from "../../assets/Material/Card/CardFooter.jsx";
+import Button from "../../assets/Material/CustomButtons/Button";
 
 
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage";
@@ -96,7 +97,7 @@ class Login extends Component {
                     <Header
                         absolute
                         color="transparent"
-                        brand="Job Board"
+                        brand="Appreciation Board"
                         rightLinks={<HeaderLinks />}
                         {...rest}
                     />
@@ -136,9 +137,9 @@ class Login extends Component {
                                                 </div>
                                             </CardBody>
                                             <CardFooter className={classes.cardFooter}>
-                                                <button size="lg" color="danger" className="form-submit" onClick={this.handleFormSubmit}>
+                                                <Button size="lg" color="danger" className="form-submit" rel="noopener noreferrer" onClick={this.handleFormSubmit}>
                                                     Login
-                          </button>
+                          </Button>
                                             </CardFooter>
                                         </form>
                                         <Link className="link" to="/signup">Don't have an account? <span className="link-signup">Signup</span></Link>

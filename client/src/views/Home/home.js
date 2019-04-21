@@ -26,7 +26,7 @@ class HomePage extends React.Component {
       <div>
         <Header
           color="transparent"
-          brand="Job Board"
+          brand="Appreciation Board"
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
@@ -39,7 +39,7 @@ class HomePage extends React.Component {
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={12} md={6}>
-                <h1 className={classes.title}>Job Board</h1>
+                <h1 className={classes.title}>Appreciation Board</h1>
                 <h4>
                 Web Application that allows small businesses to provide a portal 
                 where employees can post recognition to their fellow staff 

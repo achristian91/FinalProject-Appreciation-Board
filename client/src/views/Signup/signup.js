@@ -18,6 +18,7 @@ import Card from "../../assets/Material/Card/Card.jsx";
 import CardBody from "../../assets/Material/Card/CardBody.jsx";
 import CardHeader from "../../assets/Material/Card/CardHeader.jsx";
 import CardFooter from "../../assets/Material/Card/CardFooter.jsx";
+import Button from "../../assets/Material/CustomButtons/Button";
 import axios from "axios";
 
 
@@ -93,7 +94,7 @@ class Signup extends Component {
                     <Header
                         absolute
                         color="transparent"
-                        brand="Job Board"
+                        brand="Appreciation Board"
                         rightLinks={<HeaderLinks />}
                         {...rest}
                     />
@@ -133,7 +134,7 @@ class Signup extends Component {
                                                 </div>
                                             </CardBody>
                                             <CardFooter className={classes.cardFooter}>
-                                                <button size="lg" color="danger" className="form-submit" onClick={this.handleFormSubmit}>Signup </button>
+                                                <Button size="lg" color="danger" className="form-submit" rel="noopener noreferrer" onClick={this.handleFormSubmit}>Signup </Button>
                                             </CardFooter>
                                         </form>
                                         <Link className="link" to="/login">Already have an account? <span className="link-signup">Login</span></Link>
