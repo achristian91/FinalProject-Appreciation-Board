@@ -14,8 +14,6 @@ var app = express();
 // Requiring our models for syncing
 var db = require("./models");
 
-let client = stream.connect('REACT_APP_API_KEY', 'REACT_APP_TOKEN');
-
 app.use(express.static(path.join(__dirname, 'client/build')))
 
 /*========= Here we want to let the server know that we should expect and allow a header with the content-type of 'Authorization' ============*/
