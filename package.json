@@ -12,7 +12,7 @@
     "client": "cd client && npm start",
     "startboth": "concurrently \"nodemon server.js\" \"npm run client\"",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "build": "cd client && yarn build"
   },
   "dependencies": {
     "@material-ui/core": "3.1.1",
