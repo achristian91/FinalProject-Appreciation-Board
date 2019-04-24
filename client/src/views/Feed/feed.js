@@ -65,9 +65,9 @@ class Feed extends React.Component {
                     <div class="container-fluid">
                         <div class="col-sm-8">
                             <StreamApp
-                                apiKey={process.env.DUDE_APP_API_KEY}
-                                appId={process.env.DUDE_APP_API_ID}
-                                token={process.env.DUDE_APP_TOKEN}
+                                apiKey={process.env.REACT_APP_API_KEY}
+                                appId={process.env.REACT_APP_API_ID}
+                                token={process.env.REACT_APP_TOKEN}
                             >
                                 <NotificationDropdown notify />
                                 <StatusUpdateForm
