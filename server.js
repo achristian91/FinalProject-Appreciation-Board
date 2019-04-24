@@ -6,8 +6,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const exjwt = require('express-jwt');
 
-let stream = require('getstream');
-
 const PORT = process.env.PORT || 3001;
 var app = express();
 
