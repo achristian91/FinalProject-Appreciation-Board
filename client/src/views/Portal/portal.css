@@ -42,3 +42,58 @@
   top: 148px;
   line-height: 70px;
 }
+
+@media only screen and (max-width: 600px) {
+  #portal-top {
+    position: relative;
+    top: 120px;
+    line-height: 70px;
+  }
+  h2, #portal-middle {
+    position: absolute;
+    bottom: 168px;
+  }
+  .button-section {
+    position: relative;
+    padding-bottom: 22px;
+    bottom: 70px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #portal-top {
+    font-size: 44px;
+    position: relative;
+    top: 121px;
+    line-height: 70px;
+  }
+  h2, #portal-middle {
+    font-size: 31px;
+    position: absolute;
+    bottom: 300px;
+  }
+  .button-section {
+    position: relative;
+    padding-bottom: 22px;
+    bottom: 145px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  #portal-top {
+    font-size: 44px;
+    position: relative;
+    top: 96px;
+    line-height: 70px;
+  }
+  h2, #portal-middle {
+    font-size: 27px;
+    position: absolute;
+    bottom: 173px;
+  }
+  .button-section {
+    position: relative;
+    padding-bottom: 22px;
+    bottom: 30px;
+  }
+}
