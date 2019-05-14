@@ -8,7 +8,7 @@ const loginStyle = {
     maxHeight: "1600px",
     overflow: "hidden",
     padding: "70px 0",
-    backgroundPosition: "top center",
+    backgroundPosition: "center",
     backgroundSize: "cover",
     margin: "0",
     border: "0",

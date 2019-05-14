@@ -9,7 +9,7 @@ import HeaderLinks from "../../assets/Material/Header/HeaderLinks";
 /* Once the 'Authservice' and 'withAuth' componenets are created, import them into App.js */
 import AuthHelperMethods from '../../components/AuthHelperMethods';
 
-import image from "../../assets/img/bg8.jpg";
+import image from "../../assets/img/bg3.jpg";
 
 //Our higher order component
 import withAuth from '../../components/withAuth';
@@ -64,7 +64,7 @@ class Profile extends React.Component {
                         style={{
                             backgroundImage: "url(" + image + ")",
                             backgroundSize: "cover",
-                            backgroundPosition: "top center"
+                            backgroundPosition: "center"
                         }}
                     >
 

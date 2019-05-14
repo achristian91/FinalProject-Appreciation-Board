@@ -25,7 +25,7 @@ import axios from "axios";
 import signupPageStyle from "../../assets/jss/material-kit-react/views/SignupPage";
 
 
-import image from "../../assets/img/bg7.jpg";
+import image from "../../assets/img/bg2.jpg";
 
 import '../Login/login.css';
 
@@ -103,7 +103,7 @@ class Signup extends Component {
                         style={{
                             backgroundImage: "url(" + image + ")",
                             backgroundSize: "cover",
-                            backgroundPosition: "top center"
+                            backgroundPosition: "center"
                         }}
                     >
                         <div className={classes.container}>

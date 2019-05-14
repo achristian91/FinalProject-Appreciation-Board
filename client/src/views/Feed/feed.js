@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { StreamApp, NotificationDropdown, FlatFeed, LikeButton, Activity, CommentList, CommentField, StatusUpdateForm } from 'react-activity-feed';
 import '../Feed/feed.css';
 import 'react-activity-feed/dist/index.css';
-/* Once the 'Authservice' and 'withAuth' componenets are created, import them into App.js */
 import AuthHelperMethods from "../../components/AuthHelperMethods";
 import Header from "../../assets/Material/Header/Header";
 import HeaderLinks from "../../assets/Material/Header/HeaderLinks.jsx";
 import Button from "../../assets/Material/CustomButtons/Button";
 
-import image from "../../assets/img/bg9.jpg";
+import image from "../../assets/img/bg3.jpg";
 
 
 //Our higher order component
@@ -58,8 +57,8 @@ class Feed extends React.Component {
                 <div
                     style={{
                         backgroundImage: "url(" + image + ")",
-                        backgroundSize: "cover",
-                        backgroundPosition: "top center"
+                        backgroundSize: "contain",
+                        backgroundPosition: "center"
                     }}
                 >
                     <div class="container-fluid">

@@ -24,7 +24,7 @@ import Button from "../../assets/Material/CustomButtons/Button";
 import loginPageStyle from "../../assets/jss/material-kit-react/views/loginPage";
 
 
-import image from "../../assets/img/bg7.jpg";
+import image from "../../assets/img/bg2.jpg";
 
 import '../Login/login.css';
 
@@ -106,7 +106,7 @@ class Login extends Component {
                         style={{
                             backgroundImage: "url(" + image + ")",
                             backgroundSize: "cover",
-                            backgroundPosition: "top center"
+                            backgroundPosition: "center"
                         }}
                     >
                         <div className={classes.container}>
